@@ -763,7 +763,7 @@ img {
     color: #dd4b39;
 }
  
-#aboutUs {
+#about-us {
     padding: 60px 0;
 }
 
@@ -1638,10 +1638,10 @@ margin: 0 0 9px 0;
 .inner_section {
 padding: 20px 0 20px;
 }
-#aboutUs img{
+#about-us img{
 margin-bottom:20px;
 }
-#aboutUs h3{
+#about-us h3{
 font-size:16px;
 line-height:22px;
 }

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group( [ 'middleware' => 'web' ], function () {
 	Route::match( [ 'get', 'post' ], '/', [ IndexController::class, 'execute' ] )->name( 'home' );
-	Route::get( '/post/{alias}', [ 'uses' => 'PageController@execute', 'as' => 'page' ] );
+	Route::get( '/page/{alias}', [ 'uses' => 'PageController@execute', 'as' => 'page' ] );
 //	Auth::routes(); // Route::auth();
 } );
 
