@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group( [ 'middleware' => 'web' ], function () {
 	Route::match( [ 'get', 'post' ], '/', [ IndexController::class, 'execute' ] )->name( 'home' );
-	Route::get( '/page/{alias}', [ 'uses' => 'PageController@execute', 'as' => 'page' ] );
+	Route::get( '/page/{alias}', [ PageController::class, 'execute' ] )->name('page');
 //	Auth::routes(); // Route::auth();
 } );
 
