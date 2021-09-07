@@ -2,7 +2,7 @@
     @foreach($pages as $key => $page)
         @switch($key)
             @case(0)
-                <section id="home" class="top_cont_outer">
+                <section id="{{ $page->alias }}" class="top_cont_outer">
                     <div class="hero_wrapper">
                         <div class="container">
                             <div class="hero_section">
@@ -24,7 +24,7 @@
                 </section>
                 @break
             @case(1)
-                <section id="about-us">
+                <section id="{{ $page->alias }}">
                     <div class="inner_wrapper">
                         <div class="container">
                             <h2>{!! $page->title !!}</h2>
@@ -76,7 +76,7 @@
                 @break
             @case(3)
                 @if(isset($portfolios) && is_object($portfolios))
-                    <section id="portfolio" class="content">
+                    <section id="{{ $page->alias }}" class="content">
                         <div class="container portfolio_title">
                             <div class="section-title">
                                 <h2>{!! $page->title !!}</h2>
@@ -123,7 +123,7 @@
                 @break
             @case(4)
                 @if(isset($clients) && is_object($clients))
-                    <section class="page_section" id="clients">
+                    <section class="page_section" id="{{ $page->alias }}">
                         <h2>{{ $page->title }}</h2>
                         <div class="client_logos">
                             <div class="container">
@@ -143,7 +143,7 @@
                 @break
             @case(5)
                 @if(isset($people) && is_object($people))
-                    <section class="page_section team" id="team">
+                    <section class="page_section team" id="{{ $page->alias }}">
                         <div class="container">
                             <h2>{{ $page->title }}</h2>
                             {!! $page->text !!}
@@ -171,7 +171,7 @@
                 @endif
                 @break
             @case(6)
-                <footer class="footer_wrapper" id="contact">
+                <footer class="footer_wrapper" id="{{ $page->alias }}">
                     <div class="container">
                         <section class="page_section contact" id="contact">
                             <div class="contact_section">

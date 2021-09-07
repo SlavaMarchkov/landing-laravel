@@ -19,9 +19,9 @@
 <body>
 <header id="header_wrapper">
     @yield('header')
-    @if(session('status'))
+    @if(session('admin_status'))
         <div class="alert alert-success">
-            {{ session('status') }}
+            {{ session('admin_status') }}
         </div>
     @endif
     @if(count($errors) > 0)

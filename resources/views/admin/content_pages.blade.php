@@ -1,4 +1,4 @@
-<div style="margin: 0 20px;">
+<div style="margin: 0 20px 80px 20px;">
     @if($pages)
         <table class="table table-hover table-striped">
             <thead>
@@ -27,7 +27,8 @@
                         'class' => 'form-horizontal',
                         'method' => 'post',
                         ]) !!}
-                        {!! Form::hidden('action', 'delete') !!}
+                        {{ method_field('DELETE') }} {{--<input type="hidden" name="_method" value="DELETE">--}}
+{{--                        {!! Form::hidden('_method', 'delete') !!}--}}
                         {!! Form::button('Удалить', ['class' => 'btn btn-danger', 'type' => 'submit']) !!}
                         {!! Form::close() !!}
                     </td>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PagesAddController;
 use App\Http\Controllers\PagesController;
@@ -43,6 +44,8 @@ Route::group( [ 'prefix' => 'admin', 'middleware' => 'auth' ], function () {
 		return FALSE;
 	} );
 
+	Route::get( '/home', [ HomeController::class, 'index' ] )->name( 'home' );
+
 	// admin/pages
 	Route::group( [ 'prefix' => 'pages' ], function () {
 		Route::get( '/', [ PagesController::class, 'execute' ] )->name( 'pages' ); // admin/pages
@@ -62,5 +65,3 @@ Route::group( [ 'prefix' => 'admin', 'middleware' => 'auth' ], function () {
 		Route::match( [ 'get', 'post', 'delete' ], '/edit/{portfolio}', [ ServicesEditController::class, 'execute' ] )->name( 'servicesEdit' );
 	} );
 } );
-
-Route::get( '/home', [ App\Http\Controllers\HomeController::class, 'index' ] )->name( 'home' );
